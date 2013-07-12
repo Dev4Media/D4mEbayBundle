@@ -1,0 +1,36 @@
+{
+    "name": "d4m/ebay-bundle",
+    "description": "Ebay bundle for using EBay Trading API",
+    "keywords": ["ebay","api"],
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raul Rodriguez",
+            "email": "raulrodriguez782@gmail.com"
+        }
+    ],
+
+    "require": {
+        "d4m/ngnfeed-ebay": "~1.0",
+        "symfony/framework-bundle": "~2.3"
+    },
+
+    "require-dev":  {
+        "phpspec/phpspec": "2.0.*@dev"
+    },
+
+    "autoload": {
+        "psr-0": { "D4m\\Bundle\\EbayBundle": "" }
+    },
+
+    "target-dir": "D4m/Bundle/EbayBundle",
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+
+    "minimum-stability": "dev"
+}
