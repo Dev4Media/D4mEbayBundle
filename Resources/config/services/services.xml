@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd"
+        >
+    <parameters>
+        <parameter key="d4m_ebay.trading.class">D4m\NgnFeed\Ebay\TradingManager</parameter>
+        <parameter key="d4m_ebay.session.class">D4m\NgnFeed\Ebay\Security\Session</parameter>
+        <parameter key="d4m_ebay.service_factory.class">D4m\NgnFeed\Ebay\Service\ServiceFactory</parameter>
+        <parameter key="d4m_ebay.serializer_factory.class">D4m\NgnFeed\Ebay\Serializer\SerializerFactory</parameter>
+        <parameter key="d4m_ebay.request_factory.class">D4m\NgnFeed\Ebay\Model\Request\RequestFactory</parameter>
+        <parameter key="d4m_ebay.trading.credentials" type="collection"></parameter>
+    </parameters>
+    
+    <services>
+
+        <service id="d4m_ebay.trading" class="%d4m_ebay.trading.class%">
+            <argument type="service" id="d4m_ebay.session" />
+            <argument type="service" id="d4m_ebay.service_factory" />
+            <call method="setSerializerFactory">
+                <argument type="service" id="d4m_ebay.serializer_factory" />
+            </call>
+            <call method="setRequestFactory">
+                <argument type="service" id="d4m_ebay.request_factory" />
+            </call>
+        </service>
+        <service id="d4m_ebay.session" class="%d4m_ebay.session.class%">
+            <argument>%d4m_ebay.session_credentials%</argument>
+            <call method="setToken">
+                <argument>%d4m_ebay.session_token%</argument>
+            </call>
+            <call method="setMode">
+                <argument>%d4m_ebay.session_mode%</argument>
+            </call>
+        </service>
+        <service id="d4m_ebay.service_factory" class="%d4m_ebay.service_factory.class%" />
+        <service id="d4m_ebay.serializer_factory" class="%d4m_ebay.serializer_factory.class%" />
+        <service id="d4m_ebay.request_factory" class="%d4m_ebay.request_factory.class%" />
+    </services>
+</container>
