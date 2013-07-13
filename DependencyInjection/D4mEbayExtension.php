@@ -19,5 +19,9 @@ class D4mEbayExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services/services.xml');
+
+        $container->setParameter('d4m_ebay.session_credentials', $config['session_credentials']);
+        $container->setParameter('d4m_ebay.session_token', $config['session_token']);
+        $container->setParameter('d4m_ebay.session_mode', $config['session_mode']);
     }
 }
