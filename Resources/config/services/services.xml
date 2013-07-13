@@ -10,7 +10,9 @@
         <parameter key="d4m_ebay.service_factory.class">D4m\NgnFeed\Ebay\Service\ServiceFactory</parameter>
         <parameter key="d4m_ebay.serializer_factory.class">D4m\NgnFeed\Ebay\Serializer\SerializerFactory</parameter>
         <parameter key="d4m_ebay.request_factory.class">D4m\NgnFeed\Ebay\Model\Request\RequestFactory</parameter>
-        <parameter key="d4m_ebay.trading.credentials" type="collection"></parameter>
+        <parameter key="d4m_ebay.session_credentials" />
+        <parameter key="d4m_ebay.session_token" />
+        <parameter key="d4m_ebay.session_mode" />
     </parameters>
     
     <services>
