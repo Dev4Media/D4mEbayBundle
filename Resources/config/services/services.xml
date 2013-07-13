@@ -16,7 +16,6 @@
     </parameters>
     
     <services>
-
         <service id="d4m_ebay.trading" class="%d4m_ebay.trading.class%">
             <argument type="service" id="d4m_ebay.session" />
             <argument type="service" id="d4m_ebay.service_factory" />
