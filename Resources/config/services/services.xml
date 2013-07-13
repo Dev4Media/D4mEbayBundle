@@ -7,6 +7,7 @@
     <parameters>
         <parameter key="d4m_ebay.trading.class">D4m\NgnFeed\Ebay\TradingManager</parameter>
         <parameter key="d4m_ebay.session.class">D4m\NgnFeed\Ebay\Security\Session</parameter>
+        <parameter key="d4m_ebay.credentials.class">D4m\NgnFeed\Ebay\Security\Auth\Credentials</parameter>
         <parameter key="d4m_ebay.service_factory.class">D4m\NgnFeed\Ebay\Service\ServiceFactory</parameter>
         <parameter key="d4m_ebay.serializer_factory.class">D4m\NgnFeed\Ebay\Serializer\SerializerFactory</parameter>
         <parameter key="d4m_ebay.request_factory.class">D4m\NgnFeed\Ebay\Model\Request\RequestFactory</parameter>
@@ -27,12 +28,17 @@
             </call>
         </service>
         <service id="d4m_ebay.session" class="%d4m_ebay.session.class%">
-            <argument>%d4m_ebay.session_credentials%</argument>
+            <argument type="service" id="d4m_ebay.credentials" />
             <call method="setToken">
                 <argument>%d4m_ebay.session_token%</argument>
             </call>
             <call method="setMode">
                 <argument>%d4m_ebay.session_mode%</argument>
+            </call>
+        </service>
+        <service id="d4m_ebay.credentials" class="%d4m_ebay.credentials.class%">
+            <call method="setKeys">
+                <argument>%d4m_ebay.session_credentials%</argument>
             </call>
         </service>
         <service id="d4m_ebay.service_factory" class="%d4m_ebay.service_factory.class%" />
