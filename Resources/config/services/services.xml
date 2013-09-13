@@ -29,6 +29,7 @@
         </service>
         <service id="d4m_ebay.session" class="%d4m_ebay.session.class%">
             <argument type="service" id="d4m_ebay.credentials" />
+            <argument type="service" id="event_dispatcher" />
             <call method="setToken">
                 <argument>%d4m_ebay.session_token%</argument>
             </call>
