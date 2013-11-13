@@ -8,6 +8,7 @@ This bundle allows you to easily use the Trading API in your Symfony2 project.
 Configuration
 -------------
 
+- Add the bundle to your kernel.
 - In your config.yml add the credentials needed to access eBay API.
 - You also need to set your token and live or sandbox mode parameter.
 ::
