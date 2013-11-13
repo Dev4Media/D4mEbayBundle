@@ -3,13 +3,13 @@ Provides integration with Ebay Trading API for your Symfony2 Project.
 Features
 ========
 
-This bundle allows to easily use the Trading API in your Symfony2
+This bundle allows you to easily use the Trading API in your Symfony2 project.
 
 Configuration
 -------------
 
-- In your config.yml add the credentials needed to access eBay API
-- You also need to set your token and live or sandbox mode
+- In your config.yml add the credentials needed to access eBay API.
+- You also need to set your token and live or sandbox mode parameter.
 ::
     d4m_ebay:
         session_credentials:
@@ -22,7 +22,7 @@ Configuration
         #session_mode:  sandbox
 
 D4mEbayBundle's features
------------------------------
+------------------------
 
 - This extension lets you execute EBay Trading API Calls very simple:
 ::
