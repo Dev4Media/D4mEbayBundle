@@ -19,16 +19,18 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('session_token')->defaultValue('')->end()
-            ->scalarNode('session_mode')->defaultValue('sandbox')->end()
-            ->arrayNode('session_credentials')
-                ->children()
-                    ->scalarNode('name')->end()
-                    ->scalarNode('appId')->end()
-                    ->scalarNode('devId')->end()
-                    ->scalarNode('certId')->end()
+                ->scalarNode('session_token')->defaultValue('')->end()
+                ->scalarNode('session_mode')->defaultValue('sandbox')->end()
+                ->arrayNode('session_credentials')
+                    ->children()
+                        ->scalarNode('name')->end()
+                        ->scalarNode('appId')->end()
+                        ->scalarNode('devId')->end()
+                        ->scalarNode('certId')->end()
+                    ->end()
                 ->end()
-            ->end();
+            ->end()
+        ;
 
         return $treeBuilder;
     }
