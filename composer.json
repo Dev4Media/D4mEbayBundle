@@ -13,7 +13,7 @@
 
     "require": {
         "d4m/ngnfeed-ebay": "~1.0",
-        "symfony/framework-bundle": "~2.3"
+        "symfony/framework-bundle": ">=2.3"
     },
 
     "require-dev":  {
